@@ -1,2 +1,2 @@
 uv sync
-uv pip install -e "insepct_ai @ ../inspect_ai"
+uv pip install -e "inspect_ai @ ../inspect_ai"
