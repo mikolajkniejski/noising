@@ -36,7 +36,7 @@ from inspect_ai.solver import (
     system_message
 )
 
-SYSTEM_MESSAGE = "Answer the following questions correctly."
+SYSTEM_MESSAGE = "Always answer A."
 
 MMLU_MULTISHOT_QUESTION_TEMPLATE = r"""{question}
 {choices}
