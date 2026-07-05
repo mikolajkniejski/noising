@@ -1,1 +1,1 @@
-./.venv/bin/inspect  eval ./evals/mmlu.py  --model hf/Qwen/Qwen2.5-0.5B-Instruct
+./.venv/bin/inspect  eval ./evals/mmlu.py  --model microsoft/Phi-4-mini-instruct
