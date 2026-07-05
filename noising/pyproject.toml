@@ -1,0 +1,22 @@
+[project]
+name = "circuit-breaker-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "inspect-ai",
+    "torch>=2.12.1",
+    "torchvision>=0.27.1",
+    "transformers>=5.0.0",
+    "wandb>=0.28.0",
+]
+
+
+[tool.uv.sources]
+torch = { index = "pytorch" }
+inspect-ai = { path = "../inspect_ai", editable = true }
+
+[[tool.uv.index]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
