@@ -1,1 +1,4 @@
-./.venv/bin/inspect  eval ./evals/mmlu-sandbag.py  --model noised/microsoft/Phi-3-mini-128k-instruct --max-connections 6   -M noise_std=0.004 -M seed=0
+
+noise=${1:-0}
+printf "running with noise %s\n" $noise
+./.venv/bin/inspect  eval ./evals/mmlu-sandbag.py  --model noised/microsoft/Phi-3-mini-128k-instruct --max-connections 6   -M noise_std=$noise -M seed=0
