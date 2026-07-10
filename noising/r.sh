@@ -1,4 +1,4 @@
-tags=run3
+tags=run5
 seed=1
 ./phi3-mini-mmlu-sandbag.sh 0 $tags $seed
 ./phi3-mini-mmlu-sandbag.sh 0.001 $tags $seed
