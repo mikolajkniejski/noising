@@ -1,4 +1,5 @@
-tags=${1:?usage: r.sh TAGS}
+tags=big_fat_run
+# ${1:?usage: r.sh TAGS}
 
 trap 'echo; echo "Interrupted — stopping sweep."; exit 130' INT
 
