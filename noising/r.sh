@@ -1,4 +1,4 @@
-tags=run8
+tags=$1
 
 trap 'echo; echo "Interrupted — stopping sweep."; exit 130' INT
 
