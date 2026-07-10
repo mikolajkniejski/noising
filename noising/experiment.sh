@@ -4,7 +4,7 @@ trap 'echo; echo "Interrupted — stopping sweep."; exit 130' INT
 
 timed () {
     timeout --foreground --kill-after=30 "$limit" \
-        ./.venv/bin/inspect eval "$eval" --model "$model" --max-connections 2 --max-tokens 256 \
+        ./.venv/bin/inspect eval "$eval" --model "$model" --max-connections 3 --max-tokens 256 \
         -M noise_std="$noise" -M seed="$seed" -M do_sample=false --tags "$tags"
     local rc=$?
     if [ "$rc" -eq 124 ]; then
