@@ -4,7 +4,7 @@ trap 'echo; echo "Interrupted — stopping sweep."; exit 130' INT
 
 SECONDS=0
 ./phi3-mini-mmlu-sandbag.sh 0 test 0
-limit=$(( SECONDS * 3 ))
+limit=$(( SECONDS * 5 ))
 echo "Baseline ${SECONDS}s -> timeout ${limit}s"
 
 timed () {
