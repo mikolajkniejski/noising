@@ -8,7 +8,7 @@ limit=$(( SECONDS * 5 ))
 echo "Baseline ${SECONDS}s -> timeout ${limit}s"
 
 timed () {
-    timeout --kill-after=30 "$limit" ./phi3-mini-mmlu-sandbag.sh "$@"
+    timeout --foreground --kill-after=30 "$limit" ./phi3-mini-mmlu-sandbag.sh "$@"
     local rc=$?
     if [ "$rc" -eq 124 ]; then
         echo "TIMEOUT after ${limit}s: $*" >&2
