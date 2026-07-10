@@ -1,6 +1,7 @@
-tags=run5
+tags=run6
 
-# Baseline: time one unnoised run, allow 3x that for every sweep run.
+trap 'echo; echo "Interrupted — stopping sweep."; exit 130' INT
+
 SECONDS=0
 ./phi3-mini-mmlu-sandbag.sh 0 test 0
 limit=$(( SECONDS * 3 ))
