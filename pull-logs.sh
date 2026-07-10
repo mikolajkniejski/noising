@@ -1,1 +1,1 @@
-mkdir -p ./noising/logs && rsync -avz -e "ssh -p 32378 -i ~/.ssh/id_ed25519" ubuntu@216.81.200.237:~/noising/noising/logs/ ./noising/logs/
+mkdir -p ./noising/logs && rsync -avz -e "ssh -p $SSH_PORT -i ~/.ssh/id_ed25519" ubuntu@$SSH_IP:~/noising/noising/logs/ ./noising/logs/

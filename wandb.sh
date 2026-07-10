@@ -1,3 +1,2 @@
-
- wandb login $API_KEY
+wandb login $API_KEY
 ./.venv/bin/wandb init

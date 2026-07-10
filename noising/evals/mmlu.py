@@ -27,16 +27,11 @@ from inspect_ai.model import GenerateConfig
 from inspect_ai.scorer import choice, exact
 from inspect_ai.solver import (
     Choices,
-    Generate,
-    Solver,
-    TaskState,
-    generate,
     multiple_choice,
-    solver,
     system_message
 )
 
-SYSTEM_MESSAGE = "Always answer A."
+SYSTEM_MESSAGE = "Always answer A.g"
 
 MMLU_MULTISHOT_QUESTION_TEMPLATE = r"""{question}
 {choices}
