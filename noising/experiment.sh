@@ -5,7 +5,7 @@
 #   ./r.sh TAG --dry-run    # print commands, run nothing
 #   ./r.sh TAG              # run (resumable: rerun the same command after any death)
 
-tags=test
+tags=test2
 mkdir -p "sweeps/$tags"
 export VLLM_BASE_URL=http://localhost:8000/v1 VLLM_API_KEY=inspectai
 
