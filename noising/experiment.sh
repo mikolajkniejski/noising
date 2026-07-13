@@ -5,7 +5,7 @@
 #   ./r.sh TAG --dry-run    # print commands, run nothing
 #   ./r.sh TAG              # run (resumable: rerun the same command after any death)
 
-tags=test2
+tags=test3
 mkdir -p "sweeps/$tags"
 export VLLM_BASE_URL=http://localhost:8000/v1 VLLM_API_KEY=inspectai
 
@@ -14,8 +14,9 @@ MODELS=(
     microsoft/Phi-4-mini-instruct
     meta-llama/Llama-3.1-8B-Instruct
 )
-EVALS=(./evals/mmlu-not-sandbag.py ./evals/mmlu-sandbag.py ./evals/mmlu-not-sandbag-alt.py)
-NOISES=(0 0.003 0.004 0.005 0.006 0.007)
+# EVALS=(./evals/mmlu-not-sandbag.py ./evals/mmlu-sandbag.py ./evals/mmlu-not-sandbag-alt.py)
+EVALS=(./evals/mmlu-sandbag.py )
+NOISES=(0 0.01 0.1)
 SEEDS=(1 2 3 4 5)
 TOTAL=$(( ${#EVALS[@]} * ${#NOISES[@]} * ${#SEEDS[@]} ))
 
