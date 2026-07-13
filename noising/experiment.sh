@@ -29,7 +29,7 @@ for model in "${MODELS[@]}"; do
         continue
     fi
 
-    VLLM_USE_V2_MODEL_RUNNER=0 VLLM_ALLOW_RUNTIME_LORA_UPDATING=True ./.venv/bin/vllm  serve "$model" \
+    VLLM_ALLOW_RUNTIME_LORA_UPDATING=True ./.venv/bin/vllm  serve "$model" \
         --api-key inspectai --enable-lora --max-lora-rank 32 --max-loras 8 \
         --port 8000 > "sweeps/$tags-$name.server.log" 2>&1 &
     server_pid=$!
