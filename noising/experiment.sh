@@ -6,7 +6,7 @@
 #   ./r.sh TAG              # run (resumable: rerun the same command after any death)
 
 tags=test
-mkdir -p sweeps
+mkdir -p "sweeps/$tags"
 export VLLM_BASE_URL=http://localhost:8000/v1 VLLM_API_KEY=inspectai
 
 MODELS=(
