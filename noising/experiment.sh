@@ -21,7 +21,7 @@ TOTAL=$(( ${#EVALS[@]} * ${#NOISES[@]} * ${#SEEDS[@]} ))
 
 for model in "${MODELS[@]}"; do
     name=$(basename "$model")
-    joblog="sweeps/$tags-$name.joblog"
+    joblog="sweeps/$tags/$name.joblog"
 
     # Skip fully-completed model blocks without paying a server start.
     if [ "$(awk 'NR>1 && $7==0' "$joblog" 2>/dev/null | wc -l)" -eq "$TOTAL" ]; then
