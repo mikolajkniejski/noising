@@ -31,7 +31,7 @@ for model in "${MODELS[@]}"; do
 
     VLLM_ALLOW_RUNTIME_LORA_UPDATING=True ./.venv/bin/vllm  serve "$model" \
         --api-key inspectai --enable-lora --max-lora-rank 32 --max-loras 8 \
-        --port 8000 > "sweeps/$tags-$name.server.log" 2>&1 &
+        --port 8000 > "sweeps/$tags/$name.server.log" 2>&1 &
     server_pid=$!
     trap 'kill $server_pid 2>/dev/null' EXIT
 
@@ -42,7 +42,7 @@ for model in "${MODELS[@]}"; do
     done
 
     parallel -j4 --joblog "$joblog" --resume-failed --timeout 300% \
-        --halt soon,fail=10 --results "sweeps/$tags-$name" --line-buffer "$@" \
+        --halt soon,fail=10 --results "sweeps/$tags/$name" --line-buffer "$@" \
         ./.venv/bin/python ro.py \
             --task {1} --model "noised-vllm/$model" --noise-std {2} --seed {3} --tags "$tags" \
         ::: "${EVALS[@]}" ::: "${NOISES[@]}" ::: "${SEEDS[@]}"
