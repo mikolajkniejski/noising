@@ -37,7 +37,7 @@ for model in "${MODELS[@]}"; do
 
     echo "$name: waiting for server (pid $server_pid)..."
     until curl -sf localhost:8000/health >/dev/null; do
-        kill -0 "$server_pid" 2>/dev/null || { echo "$name: server died — see $tags-$name.server.log" >&2; exit 1; }
+        kill -0 "$server_pid" 2>/dev/null || { echo "$name: server died - see $tags-$name.server.log" >&2; exit 1; }
         sleep 5
     done
 

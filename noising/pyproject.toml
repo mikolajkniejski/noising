@@ -3,15 +3,24 @@ name = "circuit-breaker-test"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "accelerate>=1.14.0",
     "datasets>=5.0.0",
     "kitcat>=2.0.2",
     "matplotlib>=3.11.0",
     "polars>=1.42.1",
-    "torch>=2.12.1",
+    "torch==2.11.0",
     "torchvision>=0.27.1",
     "transformers>=5.0.0",
     "wandb>=0.28.0",
 ]
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
